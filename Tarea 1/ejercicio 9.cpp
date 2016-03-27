@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(int argc, char const *argv[])
 {
-	int a,b,c,d,e,potencia,max,primo,mcd,primero,segundo,tercero,cuarto;
+	int a,b,c,d,e,potencia,min,primo,mcd,primero,segundo,tercero,cuarto;
 
 	e = 0;
 	mcd = 1;
@@ -19,34 +19,33 @@ int main(int argc, char const *argv[])
 	scanf("%i",&d);
 	cuarto = d;
 
-
-	if(a > b){
-		if(a > c){
-			if(a > d){
-				max = a;
+	if(a < b){
+		if(a < c){
+			if(a < d){
+				min = a;
 			}else{
-				max = d;
+				min = d;
 			}
 		}else{
-			if(c > d){
-				max = c;
+			if(c < d){
+				min = c;
 			}else{
-				max = d;
+				min = d;
 			}
 		}
-	}else if(b > c){
-		if(b > d){
-			max = b;
+	}else if(b < c){
+		if(b < d){
+			min = b;
 		}else{
-			max = d;
+			min = d;
 		}
-	}else if(c > d){
-		max = c;
+	}else if(c < d){
+		min = c;
 	}else{
-		max = d;
+		min = d;
 	}
 	printf("\nCalculando el MCD\n");
-	for(int i=2; i<=max; i++){
+	for(int i=2; i<=min; i++){
 		for(int j=1; j<=i; j++){
 			if(i%j==0){
 				e++;
