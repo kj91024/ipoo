@@ -26,4 +26,5 @@ int main(){
 	}else{
 		printf("%i %i %i\n", a, b, c);
 	}
+	return 0;
 }

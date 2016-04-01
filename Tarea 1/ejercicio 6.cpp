@@ -1,14 +1,14 @@
 #include <stdio.h>
 int main(){
-	int x,n,m;
+	int x,n,m,c;
 	m = 1;
 	printf("# Base del exponente: ");
 	scanf("%i",&x);
 	printf("# Exponente: ");
 	scanf("%i",&n);
-	for(int c=0; c<n ; c++){
+	for(c=0; c<n ; c++){
 		m = m * x; 
 	}
 	printf("Resultado: %i \n", m);
-	return false;
+	return 0;
 }

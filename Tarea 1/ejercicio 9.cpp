@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(int argc, char const *argv[])
 {
-	int a,b,c,d,e,potencia,min,primo,mcd,primero,segundo,tercero,cuarto;
+	int a,b,c,d,e,i,j,potencia,min,primo,mcd,primero,segundo,tercero,cuarto;
 
 	e = 0;
 	mcd = 1;
@@ -45,8 +45,8 @@ int main(int argc, char const *argv[])
 		min = d;
 	}
 	printf("\nCalculando el MCD\n");
-	for(int i=2; i<=min; i++){
-		for(int j=1; j<=i; j++){
+	for(i=2; i<=min; i++){
+		for(j=1; j<=i; j++){
 			if(i%j==0){
 				e++;
 			}
@@ -57,19 +57,18 @@ int main(int argc, char const *argv[])
 
 		potencia = 1;
 
-		while(a % primo == 0 and b % primo == 0 and c % primo == 0 and d % primo == 0){
+		while(a % primo == 0 && b % primo == 0 && c % primo == 0 && d % primo == 0){
 			potencia = potencia * primo;
 			printf("%i - %i - %i - %i | %i\n", a, b, c, d, primo);
 			a = a / primo;
 			b = b / primo;
 			c = c / primo;
-			d = d / primo;
-			printf("%i - %i - %i - %i\n", a, b, c, d);
+			d = d / primo;			
 		}
-
 		mcd = potencia * mcd;
 		e = 0;
 	}
+	printf("%i - %i - %i - %i\n", a, b, c, d);
 	printf("\nMCD(%i, %i, %i, %i) = %i\n", primero, segundo, tercero, cuarto, mcd);
 	return 0;
 }

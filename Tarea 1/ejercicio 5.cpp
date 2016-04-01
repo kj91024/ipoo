@@ -1,13 +1,13 @@
 #include <stdio.h>
 int main(){
-	int n,c,sum;
+	int n,c,sum,a,b;
 	sum = 1;
 	c = 0;
 	printf("Escribe un numero entero positivo: ");
 	scanf("%i",&n);
 
-	for(int a=2; a<=n; a++){
-		for(int b=1; b<=a; b++){
+	for(a=2; a<=n; a++){
+		for(b=1; b<=a; b++){
 			if(a%b==0){
 				c++;
 			}
@@ -18,5 +18,5 @@ int main(){
 		c = 0;
 	}
 	printf("%i\n",sum);
-	return false;
+	return 0;
 }

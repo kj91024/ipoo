@@ -13,5 +13,5 @@ int main(){
 		}
 		printf("Espacios: %i \t Tabulaciones: %i \t Salto de linea: %i\n", cs, ct, ce);
 	}
-	return false;
+	return 0;
 }
