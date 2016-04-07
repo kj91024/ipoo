@@ -1,11 +1,6 @@
 #include <stdio.h>
-int main(){
-	int n;
-	n = 0;
-	n = n & 0177;
-	printf("%i", n);
-	return 0;	
+unsigned setbits(unsigned x,int p,int n,unsigned y)
+{
+    unsigned mask = (1U << n) - 1U; // n-bits
+    return (x & ~(mask << p)) | ((y & mask) << p);
 }
-/*int setbits(x,p,n,y){
-
-}*/
