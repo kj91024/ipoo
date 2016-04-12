@@ -9,6 +9,8 @@ int getop(char []);
 void push(double);
 double pop(void);
 
+/* reverse polish calculator */
+
 int main(void)
 {
     int type;
@@ -44,7 +46,7 @@ int main(void)
                         if(op2 != 0.0)
                             push(fmod(pop(),op2));
                         else
-                            printf("error: Divicion con Cero\n");
+                            printf("erro:Divicion con Cero\n");
                         break;*/
                 case '\n':
                         printf("\t%.8g\n",pop());
