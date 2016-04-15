@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 #define MAXOP 100
 #define NUMBER '0'
@@ -9,7 +9,7 @@ int getop(char []);
 void push(double);
 double pop(void);
 
-/* reverse polish calculator */
+/* calculadora polaca */
 
 int main(void)
 {
@@ -19,15 +19,15 @@ int main(void)
     void clearsp(void);
 
     while((type = getop(s)) != EOF)
-    {
+    {	
         switch(type)
         {
                 case NUMBER:
                         push(atof(s));
                         break;
                 case '+':
-                        push(pop()+pop());
-                        break;
+                        push(pop()+pop());      
+			break;
                 case '*':
                         push(pop()*pop());
                         break;
@@ -40,15 +40,15 @@ int main(void)
                         if(op2 != 0.0)
                             push(pop()/op2);
                         else
-                            printf("error:zero divisor\n");
+                            printf("error:divicion entre cero\n");
                         break;
-                case '%':
+                /*case '%':
                         op2 = pop();
                         if(op2 != 0.0)
                             push(fmod(pop(),op2));
                         else
-                            printf("erro:zero divisor\n");
-                        break;
+                            printf("erro:divicion entre cero\n");
+                        break;*/
                 case '?':
                         op2=pop();
                         printf("\t%.8g\n",op2);
@@ -72,9 +72,9 @@ int main(void)
                         printf("\t%.8g\n",pop());
                         break;
                 default:
-                        printf("error: unknown command %s\n",s);
+                        printf("error: no reconosco este comando %s\n",s);
                         break;
-        }
+        } 
     }
     return 0;
 }
@@ -90,7 +90,7 @@ void push(double f)
     if(sp < MAXVAL)
         val[sp++]=f;
     else
-        printf("error:stack full, cant push %g\n",f);
+        printf("error:el array esta lleno no puedo hacer push %g\n",f);
 }
 
 
@@ -100,7 +100,7 @@ double pop(void)
         return val[--sp];
     else
     {
-        printf("error: stack empty\n");
+        printf("error: array vacio\n");
         return 0.0;
     }
 }
@@ -110,7 +110,7 @@ void clearsp(void)
     sp = 0;
 }
 
-#include<ctype.h>
+#include <ctype.h>
 
 int getch(void);
 void ungetch(int);
@@ -136,15 +136,13 @@ int getop(char s[])
                 ungetch(c);
             return '-';
         }
-    
     if(isdigit(c))
         while(isdigit(s[++i] =c =getch()))
             ;
 
     if(c=='.')
         while(isdigit(s[++i] = c=getch()))
-            ;
-    
+            ;    
     s[i] = '\0';
     if(c!=EOF)
         ungetch(c);
@@ -164,7 +162,7 @@ int getch(void)
 void ungetch(int c)
 {
     if(bufp >= BUFSIZE)
-        printf("ungetch: too many characters\n");
+        printf("ungetch: muchos caracteres\n");
     else
         buf[bufp++] = c;
 }

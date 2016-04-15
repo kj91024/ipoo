@@ -39,14 +39,14 @@ int main(void)
                         if(op2 != 0.0)
                             push(pop()/op2);
                         else
-                            printf("error:zero divisor\n");
+                            printf("error:division entre cero\n");
                         break;
                 case '=':
                         pop();
                         if(var>='A' && var <='Z')
                             variable[var-'A']=pop();
                         else
-                            printf("error: novariablename\n");
+                            printf("error: nombre no variable\n");
                             break;
                         
                 case '\n':
@@ -59,7 +59,7 @@ int main(void)
                         else if(type =='v')
                             push(v);
                         else
-                            printf("error: unknown command %s\n",s);
+                            printf("error: no entiendo el comando %s\n",s);
                         break;
         }
         var = type;
@@ -78,7 +78,7 @@ void push(double f)
     if(sp < MAXVAL)
         val[sp++]=f;
     else
-        printf("error:stack full, cant push %g\n",f);
+        printf("error: array lleno, no puedo hacer push%g\n",f);
 }
 
 
@@ -88,7 +88,7 @@ double pop(void)
         return val[--sp];
     else
     {
-        printf("error: stack empty\n");
+        printf("error: array basio\n");
         return 0.0;
     }
 }
@@ -136,7 +136,7 @@ int getch(void)
 void ungetch(int c)
 {
     if(bufp >= BUFSIZE)
-        printf("ungetch: too many characters\n");
+        printf("ungetch: muchos caracteres\n");
     else
         buf[bufp++] = c;
 }

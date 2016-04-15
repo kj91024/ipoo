@@ -1,4 +1,4 @@
-/* a recursive version of revese(s); the string reverse function */
+/* funcion recursiva que da vuelta a un string */
 
 #include <stdio.h>
 #include <string.h>
@@ -41,7 +41,7 @@ void reverse(char s[])
     reverser(s,0,strlen(s));
 }
 
-/* reverser: reverse string s in place; recursive */
+/* reverser: volteamos el string desde "s"*/
 
 void reverser(char s[],int i,int len)
 {

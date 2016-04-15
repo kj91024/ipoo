@@ -12,11 +12,11 @@ int main(void)
     int n,s,array[SIZE],getint(int *);
 
     for(n=0;n<SIZE && getint(&array[n]) !=EOF; n++){
-       /* For debug purposes */
-       printf("storing in n = %d, getint %d\n", n, array[n]);
+       /* por errores que nos aparescan */
+       printf("n = %d, getint %d\n", n, array[n]);
     }
     
-    printf("storing in n = %d, getint %d\n", n, array[n]);
+    printf("n = %d, getint %d\n", n, array[n]);
 
     for(s=0;s<=n; s++)
         printf("%d",array[s]);
@@ -66,7 +66,7 @@ int getch(void)
 void ungetch(int c)
 {
     if(bufp >= BUFSIZE)
-        printf("ungetch: too many characters\n");
+        printf("ungetch: muchos caracteres\n");
     else
         buf[bufp++]=c;
 }

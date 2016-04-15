@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 
 #define MAXOP 100
 #define NUMBER '0'
@@ -11,7 +11,7 @@ void push(double);
 double pop(void);
 void mathfnc(char []);
 
-/* reverse polish calculator */
+/* calculadora polaca */
 
 int main(void)
 {
@@ -45,14 +45,14 @@ int main(void)
                         if(op2 != 0.0)
                             push(pop()/op2);
                         else
-                            printf("error:zero divisor\n");
+                            printf("error:divicion entre cero\n");
                         break;
                 case '%':
                         op2 = pop();
                         if(op2 != 0.0)
                             push(fmod(pop(),op2));
                         else
-                            printf("erro:zero divisor\n");
+                            printf("erro:divicion entre cero\n");
                         break;
                 case '?':
                         op2=pop();
@@ -77,7 +77,7 @@ int main(void)
                         printf("\t%.8g\n",pop());
                         break;
                 default:
-                        printf("error: unknown command %s\n",s);
+                        printf("error: no reconosco el comando %s\n",s);
                         break;
         }
     }
@@ -95,7 +95,7 @@ void push(double f)
     if(sp < MAXVAL)
         val[sp++]=f;
     else
-        printf("error:stack full, cant push %g\n",f);
+        printf("error:array lleno no puedo hacer push %g\n",f);
 }
 
 
@@ -105,7 +105,7 @@ double pop(void)
         return val[--sp];
     else
     {
-        printf("error: stack empty\n");
+        printf("error: array vacio\n");
         return 0.0;
     }
 }
@@ -115,7 +115,7 @@ void clearsp(void)
     sp = 0;
 }
 
-#include<ctype.h>
+#include  <ctype.h>
 #include<string.h>
 
 int getch(void);
@@ -183,12 +183,12 @@ int getch(void)
 void ungetch(int c)
 {
     if(bufp >= BUFSIZE)
-        printf("ungetch: too many characters\n");
+        printf("ungetch: muchos caracteres\n");
     else
         buf[bufp++] = c;
 }
 
-/* mathfnc: check the string s for supported math function */
+/* mathfnc: verifica el string y mira si soporta funciones mateaticas */
 
 void mathfnc(char s[])
 {
@@ -206,5 +206,5 @@ void mathfnc(char s[])
         push(pow(pop(),op2));
     }
     else
-        printf("error: %s is not supported\n",s);
+        printf("error: %s no esta soportado\n",s);
 }

@@ -1,7 +1,5 @@
-/*Write a program to get next float from input to *pn */
-
-#include<stdio.h>
-#include<ctype.h>
+#include <stdio.h>
+#include <ctype.h>
 
 #define SIZE 1000
 
@@ -49,7 +47,7 @@ int getfloat(float *pn)
 
     for(power=1.0;isdigit(c);c=getch())
     {
-        *pn = 10.0 * *pn + (c - '0');   /* fractional part */
+        *pn = 10.0 * *pn + (c - '0');   /* parte fraccionaria */
         power *= 10.0;
     }
 
@@ -74,7 +72,7 @@ int getch(void)
 void ungetch(int c)
 {
     if(bufp >= BUFSIZE)
-        printf("ungetch: too many characters\n");
+        printf("ungetch: muchos caracteres\n");
     else
         buf[bufp++]=c;
 }
