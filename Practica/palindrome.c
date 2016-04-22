@@ -24,8 +24,8 @@ int palindrome(char *s,int n){
 	int min, max;
 	min = 0;
 	max = n-1;
-        for(;*(s + min++) == *(s + max--) && max > 0;)
-		 ;
-	return (*(s + min--) == *(s + max++))? 1 : 0;
+	for(;*(s + min++) == *(s + max--) && max >= min;)
+		;
+	return (*(s + --min) == *(s + ++max))? 1 : 0;
 }
 
