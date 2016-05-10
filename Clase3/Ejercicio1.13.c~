@@ -22,19 +22,19 @@ int getline(void){
 	n = i = j = 0;
 	while((c = getchar()) != EOF){
 		if(c == 32 || c == 10){/*Detecta saltos de linea y espacios*/
-		    if(n != 0){
-		       	/*Existe una palabra*/
-		       	ndigit[j] = n;
-		       	++j;
-		       	n = 0;
-		    }
-	    }else{
-	      	n++;
-	    }
-	    ++i;
-	    if(c == '\n'){
+		    	if(n != 0){
+		       		/*Existe una palabra*/
+		       		ndigit[j] = n;
+		       		++j;
+		       		n = 0;
+		    	}
+	    		}else{
+	      		n++;
+	    	}
+	    	++i;
+	    	if(c == '\n'){
 			return i;
-	    }
+	    	}
 	}
 }
 int printM(void){
