@@ -67,7 +67,7 @@ class Calc:opBasic,opAdvanced{
 		/**Optiene el valor de la suma*/
 		double getSuma(void){ return Suma(a,b);}
 		/**Optiene el valor de la resta*/
-		int getResta(void){ return Resta(a,b);}
+		 getResta(void){ return Resta(a,b);}
 		/**Optiene el valor de la Division*/
 		double getDivision(void){ return Division(a,b);}
 		/*Getting de las operaciones avanzadas de una calculadora*/

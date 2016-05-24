@@ -4,7 +4,7 @@ class Point{
 	private:
 		int x,y;
 	public:
-		Point(int u,int v) : x(u), y(y) {}
+		Point(int u,int v) : x(u), y(v) {}
 		int getX() {return x;}
 		int getY() {return y;}
 		void doubleVal(){

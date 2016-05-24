@@ -1,6 +1,7 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 int main(){
-	char *oddOrEven = "Never odd or even";
+	string oddOrEven = "Never odd or even";
 }
