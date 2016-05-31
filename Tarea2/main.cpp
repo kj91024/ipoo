@@ -1,3 +1,4 @@
+/*Nota: Poner delete por que percy lo dice es la voz de dios*/
 #include <iostream>
 using namespace std;
 class node{
@@ -65,16 +66,33 @@ class link{
 			temp = temp->next;	
 			count++;
 		}
+		/*
+			node *save_temp = temp;
+			node *temp_back = temp->back;
+
+			node *new_node = new node(i);
+			new_node->next = temp;
+			new_node->back = temp->back;
+
+			temp_back->next = new_node;
+
+			temp->back = new_node;*/
 		node *save_temp = temp;
-		node *temp_back = temp->back;
+		if(temp == this->first){
+			node *temp_back = temp->back;
 
-		node *new_node = new node(i);
-		new_node->next = temp;
-		new_node->back = temp->back;
+			node *new_node = new node(i);
+			new_node->next = temp;
+			new_node->back = temp->back;
 
-		temp_back->next = new_node;
+			temp_back->next = new_node;
 
-		temp->back = new_node;
+			temp->back = new_node;
+		}else if(temp == this->last){
+
+		}else{
+
+		}
 		/*temp->next = save_temp;*/
 	}
 	node *queue(void){
@@ -106,7 +124,7 @@ int main(){
 	l.pop(3);/*sacar el nodo de la posicion 3*/
 	l.printDes();
 	cout << endl<<endl;
-	l.push(3,4);
+	l.push(4,4);
 	l.printDes();
 	cout << endl<<endl;
 	l.queue();
