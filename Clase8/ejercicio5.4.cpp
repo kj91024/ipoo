@@ -19,12 +19,12 @@ class Polygon{
 };
 
 Point * updateConstructorPoints ( const Point & p1 , const Point & p2 ,
-const Point & p3 , const Point & p4 = Point (0 ,0) ) {
-cons tructorPoints [0] = p1 ;
-constructorPoints [1] = p2 ;
-constructorPoints [2] = p3 ;
-constructorPoints [3] = p4 ;
-return construct orPoints ;
+	const Point & p3 , const Point & p4 = Point (0 ,0) ) {
+	cons tructorPoints [0] = p1 ;
+	constructorPoints [1] = p2 ;
+	constructorPoints [2] = p3 ;
+	constructorPoints [3] = p4 ;
+	return construct orPoints ;
 }
 
 class rectangle : public Polygon{

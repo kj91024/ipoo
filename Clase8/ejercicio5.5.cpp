@@ -42,12 +42,12 @@ class Triangle : public Polygon{
 	public:
 		Triangle( const Point &a , const Point &b , const Point & c ): Polygon ( updateConstructorPoints(a , b , c ) , 3) {}
 		virtual double area()const {
-			int dx01 = points . get (0) -> getX () - points . get (1) -> getX () ,
-			dx12 = points . get (1) -> getX () - points . get (2) -> getX () ,
-			dx20 = points . get (2) -> getX () - points . get (0) -> getX () ;
-			int dy01 = points . get (0) -> getY () - points . get (1) -> getY () ,
-			dy12 = points . get (1) -> getY () - points . get (2) -> getY () ,
-			dy20 = points . get (2) -> getY () - points . get (0) -> getY () ;
+			int dx01 = points.get (0) -> getX () - points.get (1) -> getX () ,
+			dx12 = points.get (1) -> getX () - points.get (2) -> getX () ,
+			dx20 = points.get (2) -> getX () - points.get (0) -> getX () ;
+			int dy01 = points.get (0) -> getY () - points . get (1) -> getY () ,
+			dy12 = points.get (1) -> getY () - points . get (2) -> getY () ,
+			dy20 = points.get (2) -> getY () - points . get (0) -> getY () ;
 			double a = sqrt ( dx01 * dx01 + dy01 * dy01 ) ,
 			b = sqrt ( dx12 * dx12 + dy12 * dy12 ) ,
 			c = sqrt ( dx20 * dx20 + dy20 * dy20 ) ;
